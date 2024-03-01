@@ -17,15 +17,27 @@ const Header = () => {
     <>
       <header>
         <div className="w-screen border-b-2 flex justify-between p-2 ">
-          <div className="flex justify-center items-center space-x-4">
+          <div className="flex justify-center items-center space-x-4 lg:p-3 ">
             <GiHamburgerMenu
               id="hamburger"
               onClick={() => {
                 setState(true);
               }}
-              className="text-2xl"
+              className="text-2xl lg:hidden"
             />
-            <p className="text-xl font-semibold">logo</p>
+            <p className="text-xl font-semibold font-mono">logo</p>
+            <div className="hidden lg:block">
+            <ul className="ml-10 flex justify-around space-x-11 font-serif hover:text-black">
+              {list.map((elem, i) => {
+                const { title } = elem; //destructed in react //
+                return (
+                  <li key={i} className="text-lg text-gray-500">
+                    {title}
+                  </li>
+                );
+              })}
+              </ul>
+              </div>
           </div>
           <div
             id="mobile-navbar"
@@ -42,7 +54,7 @@ const Header = () => {
                 }}
                 className="text-2xl mb-5 cursor-pointer "
               />
-              <ul className="space-y-4">
+              <ul className="space-y-4 font-serif">
                 {list.map((elem, i) => {
                   const { title } = elem; //destructed in react //
                   return (
@@ -54,7 +66,7 @@ const Header = () => {
               </ul>
             </div>
           </div>
-          <div className="flex justify-center items-center space-x-4 ">
+          <div className="flex justify-center items-center space-x-4 lg:space-x-10 ">
             <FaCartPlus className="text-2xl" />
             <FaUserCircle className="text-2xl" />
           </div>
