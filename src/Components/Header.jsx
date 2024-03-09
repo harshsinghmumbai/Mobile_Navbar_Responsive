@@ -1,9 +1,10 @@
 import { GiHamburgerMenu } from "react-icons/gi";
-import { FaCartPlus } from "react-icons/fa";
-import { FaUserCircle } from "react-icons/fa";
 import { RxCross1 } from "react-icons/rx";
 import { useState } from "react";
 import clsx from "clsx";
+import LeftContainer from "./LeftContainer";
+import Logo from "./Logo";
+
 
 const Header = () => {
   const [state, setState] = useState(false);
@@ -25,19 +26,21 @@ const Header = () => {
               }}
               className="text-2xl lg:hidden"
             />
-            <p className="text-xl font-semibold font-mono">logo</p>
+
+            <Logo />
+
             <div className="hidden lg:block">
-            <ul className="ml-10 flex justify-around space-x-11 font-serif hover:text-black">
-              {list.map((elem, i) => {
-                const { title } = elem; //destructed in react //
-                return (
-                  <li key={i} className="text-lg text-gray-500">
-                    {title}
-                  </li>
-                );
-              })}
+              <ul className="ml-10 flex justify-around space-x-11 font-serif hover:text-black">
+                {list.map((elem, i) => {
+                  const { title } = elem; //destructed in react //
+                  return (
+                    <li key={i} className="text-lg text-gray-500">
+                      {title}
+                    </li>
+                  );
+                })}
               </ul>
-              </div>
+            </div>
           </div>
           <div
             id="mobile-navbar"
@@ -66,10 +69,7 @@ const Header = () => {
               </ul>
             </div>
           </div>
-          <div className="flex justify-center items-center space-x-4 lg:space-x-10 ">
-            <FaCartPlus className="text-2xl" />
-            <FaUserCircle className="text-2xl" />
-          </div>
+          <LeftContainer />
         </div>
       </header>
     </>
