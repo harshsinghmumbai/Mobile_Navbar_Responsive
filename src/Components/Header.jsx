@@ -7,7 +7,7 @@ import Logo from "./Logo";
 
 
 const Header = () => {
-  const [state, setState] = useState(false);
+  const [clicked, setClicked] = useState(false);
   const list = [
     { title: "Collection" },
     { title: "men" },
@@ -22,7 +22,7 @@ const Header = () => {
             <GiHamburgerMenu
               id="hamburger"
               onClick={() => {
-                setState(true);
+                setClicked(true);
               }}
               className="text-2xl lg:hidden"
             />
@@ -46,14 +46,14 @@ const Header = () => {
             id="mobile-navbar"
             className={clsx(
               "fixed top-0 left-0 w-screen h-full bg-black/20 backdrop-blur-sm -translate-x-full",
-              state && "translate-x-0"
+              clicked && "translate-x-0"
             )}
           >
             <div className="bg-white w-3/5 h-full p-7 ">
               <RxCross1
                 id="Cross-icon"
                 onClick={() => {
-                  setState(false);
+                  setClicked(false);
                 }}
                 className="text-2xl mb-5 cursor-pointer "
               />
