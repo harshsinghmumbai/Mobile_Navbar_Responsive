@@ -27,23 +27,23 @@ const Header = () => {
             />
             <p className="text-xl font-semibold font-mono">logo</p>
             <div className="hidden lg:block">
-            <ul className="ml-10 flex justify-around space-x-11 font-serif hover:text-black">
-              {list.map((elem, i) => {
-                const { title } = elem; //destructed in react //
-                return (
-                  <li key={i} className="text-lg text-gray-500">
-                    {title}
-                  </li>
-                );
-              })}
+              <ul className="ml-10 flex justify-around space-x-11 font-serif hover:text-black">
+                {list.map((elem, i) => {
+                  const { title } = elem; //destructed in react //
+                  return (
+                    <li key={i} className="text-lg text-gray-500">
+                      {title}
+                    </li>
+                  );
+                })}
               </ul>
-              </div>
+            </div>
           </div>
           <div
             id="mobile-navbar"
             className={clsx(
               "fixed top-0 left-0 w-screen h-full bg-black/20 backdrop-blur-sm -translate-x-full",
-              state && "translate-x-0"
+              state && "translate-x-0" //toggle on true//
             )}
           >
             <div className="bg-white w-3/5 h-full p-7 ">
